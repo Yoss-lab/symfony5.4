@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang"fr">
+<head>
+    <title>tableau</title>
+    <link rel="stylesheet" href="{{ asset('assets/node_modules/bootstrap/dist/css/bootstrap.css')}}">
+</head>
+<body>
+{% for message in app.session.flashBag.get('info') %}
+    <div class="alert alert-success">
+        {{message}}
+    </div>
+{% endfor %}
+{% for message in app.session.flashBag.get('success') %}
+    <div class="alert alert-success">
+    
+        {{message}}
+    </div>
+{% endfor %}
+{% for message in app.session.flashBag.get('error') %}
+    <div class="alert alert-danger">
+        {{message}}
+    </div>
+{% endfor %}
+<h1>Liste des todos</h1>
+<div>
+    <ol>
+    {% for item,content in app.session.get('todos') %}
+    <li>{{item}} : {{content}}</li>
+    {% endfor %}
+    </ol>
+</div>
+</body>
+</html>
