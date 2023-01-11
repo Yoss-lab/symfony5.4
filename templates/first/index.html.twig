@@ -4,6 +4,7 @@
     <title>Ma prmiere page symfony</title>
 </head>
 <body>
-<div>Bonjour {{name}} {{firstname}}</div>
+<div>Ici on affiche la date d'aujourd'hui : {{"now" | date("d/m/Y")}}</div>
+<div>Bonjour {{name | upper}} {{firstname}}</div>
 </body>
 </html>

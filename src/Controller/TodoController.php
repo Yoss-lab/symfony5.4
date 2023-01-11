@@ -6,9 +6,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-
+  
 class TodoController extends AbstractController
 {
+    
+
+
     /**
      * @Route("/todo", name="todo")
      */
@@ -30,10 +33,18 @@ class TodoController extends AbstractController
         //si j'ai un tableau je l'affiche
         return $this->render('todo/index.html.twig');
     }
-
-
+    //Route générique
      /**
-     * @Route("/todo/add/{item}/{content}", name="add.todo")
+     * @Route("/{var}", name="var")
+     */
+    public function testOrderRoute($var): Response
+    {
+        return new Response("<html><body>$var</body></html>");
+    }
+
+    //sf5.4 est un valeur par défaut effectuée au content
+     /**
+     * @Route("/todo/add/{item}/{content?sf5.4}", name="add.todo")
      */
     public function addTodo(Request $request , $item , $content)
     {
@@ -57,8 +68,8 @@ class TodoController extends AbstractController
         return $this->redirectToRoute('todo');
     }
     
-        /**
-     * @Route("/todo/delete/{item}", name="delete.todo")
+    /**
+     * @Route("/delete/{item}", name="delete.todo")
      */
     public function deleteTodo(Request $request , $item)
     {
@@ -82,8 +93,8 @@ class TodoController extends AbstractController
         return $this->redirectToRoute('todo');
     }
 
-         /**
-     * @Route("/todo/update/{item}/{content}", name="update.todo")
+    /**
+     * @Route("/update/{item}/{content}", name="update.todo")
      */
     public function updateTodo(Request $request , $item , $content)
     {
@@ -107,8 +118,8 @@ class TodoController extends AbstractController
         return $this->redirectToRoute('todo');
     }
 
-            /**
-     * @Route("/todo/reset", name="reset.todo")
+    /**
+     * @Route("/reset", name="reset.todo")
      */
     public function resetTodo(Request $request)
     {
