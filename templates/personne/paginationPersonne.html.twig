@@ -1,0 +1,19 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block pageContent %}
+<div class="row">
+    {% for personne in personnes %}
+    <div class="card m-3" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">{{personne.firstname}} {{personne.name}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{personne.age}} ans</h6>
+        <p class="card-text">Identifiant{{personne.id}}</p>
+        <a href="{{ path('personne.details',{id: personne.id})}}" class="card-link">Details</a>
+    </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

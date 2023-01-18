@@ -1,0 +1,24 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block pageContent %}
+
+<table class="table">
+    <tr class="table-active">
+    <td>ID</td>
+    <td>firstname</td>
+    <td>name</td>
+    <td>age</td>
+    </tr>
+{% for personne in personnes %}
+    <tr class="table-{% if loop.index is odd %}danger {% else %}warning {% endif %}">
+       <td>{{personne.id}}</td>
+        <td>{{personne.firstname}} {{ loop.index}}</td>
+        <td>{{personne.name}}</td>
+        <td>{{personne.age}}</td>
+        <td><a href="{{ path('personne.details',{id: personne.id})}}">Details</a></td>
+    </tr>
+{% endfor %}
+</table>
+{% endblock %}

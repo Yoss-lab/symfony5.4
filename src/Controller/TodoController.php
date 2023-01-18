@@ -33,9 +33,10 @@ class TodoController extends AbstractController
         //si j'ai un tableau je l'affiche
         return $this->render('todo/index.html.twig');
     }
+   
     //Route générique
      /**
-     * @Route("/{var}", name="var")
+     * @Route("Route générique/{var}", name="var")
      */
     public function testOrderRoute($var): Response
     {

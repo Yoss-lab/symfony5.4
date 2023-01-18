@@ -1,11 +1,13 @@
-<!doctype html>
-<html lang"fr">
-<head>
-    <title></title>
-    <link rel="stylesheet" href="{{ asset('assets/node_modules/bootstrap/dist/css/bootstrap.css')}}">
+{% extends 'template.html.twig' %}
 
-</head>
-<body>
+{% block title %}Notes{% endblock %}
+
+
+
+{% block pageTitle %}Liste of notes{% endblock %}
+{% block pageContent %}
+{{include('fragments/dateJour.html.twig')}}
+Mon URL absolue est : {{ url('app_tab')}}
 <table class="table">
 {% for note in notes %}
     <tr>
@@ -17,5 +19,4 @@
 <div class="alert alert-info"> le nombre des eleves {{ notes | length }} </div>
 <div class="alert alert-info"> la note maximale {{ max(notes) }} </div>
 <div class="alert alert-info"> la note minimale {{ min(notes) }} </div>
-</body>
-</html>
+{% endblock %}

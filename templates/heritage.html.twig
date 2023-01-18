@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang"fr">
+<head>
+    <title>
+        {% block titleDocument %}
+            Titre par défaut
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{{ asset('assets/node_modules/bootstrap/dist/css/bootstrap.css')}}">
+
+</head>
+<body>
+ header
+    <hr>
+    {% block documentCorp %}
+        Du contenu par défaut du bloc documentCorp
+    {% endblock %}
+    <hr>
+ footer
+</body>
+</html>

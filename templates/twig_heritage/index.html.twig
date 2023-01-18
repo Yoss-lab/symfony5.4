@@ -1,0 +1,10 @@
+{% extends 'heritage.html.twig' %}
+
+{% block titleDocument %}Hello TwigHeritageController!{% endblock %}
+
+{% block documentCorp %}
+{# contenu de la block parent #}
+{{ parent() }}
+
+<div> j'adore l'héritage</div>
+{% endblock %}

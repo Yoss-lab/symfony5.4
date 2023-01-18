@@ -1,0 +1,16 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}{{personne.firstname}} {{personne.name}}{% endblock %}
+
+{% block pageContent %}
+
+
+<ol>
+       <li>{{personne.id}}</li>
+        <li>{{personne.firstname}}</li>
+        <li>{{personne.name}}</li>
+        <li>{{personne.age}}</li>
+</ol>
+
+
+{% endblock %}
